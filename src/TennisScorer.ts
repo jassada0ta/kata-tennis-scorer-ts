@@ -3,7 +3,8 @@ export class TennisScorer {
         const scoreMap: any = {
             0: "love",
             15: "fifteen",
-            30: "thirty"
+            30: "thirty",
+            40: "forty"
         };
         const p1ScoreText = scoreMap[p1Score];
         const p2ScoreText = scoreMap[p2Score];

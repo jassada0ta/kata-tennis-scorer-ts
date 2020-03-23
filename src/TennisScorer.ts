@@ -6,16 +6,15 @@ export class TennisScorer {
             30: "thirty",
             40: "forty"
         };
-        if(p1Score>40){
-            return "advantage player1";
-        }
         const p1ScoreText = scoreMap[p1Score];
         const p2ScoreText = scoreMap[p2Score];
         const diffScoreText = `${p1ScoreText}-${p2ScoreText}`;
         const isSameScore = p1Score === p2Score;
         const sameScoreLessThan40Text = `${p1ScoreText}-all`;
         const sameScoreText = p1Score === 40 ? "deuce" : sameScoreLessThan40Text;
-        return isSameScore ? sameScoreText : diffScoreText;
+        return p1Score > 40 ? "advantage player1"
+            : isSameScore ? sameScoreText
+                : diffScoreText;
     }
 
 }

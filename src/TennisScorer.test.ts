@@ -85,5 +85,16 @@ describe("TennisScorer", () => {
                 expect(result).to.equal("deuce");
             });
         });
+        describe("when score is 41-40", () => {
+            beforeEach(() => {
+                p1Score = 41;
+                p2Score = 40;
+            });
+
+            it("should return advantage player1", () => {
+                act();
+                expect(result).to.equal("advantage player1");
+            });
+        });
     })
 });

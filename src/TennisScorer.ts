@@ -9,6 +9,9 @@ export class TennisScorer {
         const p1ScoreText = scoreMap[p1Score];
         const p2ScoreText = scoreMap[p2Score];
         if (p1Score === p2Score) {
+            if(p1Score === 40){
+                return "deuce";
+            }
             return `${p1ScoreText}-all`;
         }
         return `${p1ScoreText}-${p2ScoreText}`;

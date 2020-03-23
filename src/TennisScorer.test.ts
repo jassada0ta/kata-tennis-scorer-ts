@@ -41,5 +41,16 @@ describe("TennisScorer", () => {
                 expect(result).to.equal("fifteen-all");
             });
         });
+        describe("when score is 15-0", () => {
+            beforeEach(() => {
+                p1Score = 15;
+                p2Score = 0;
+            });
+
+            it("should return fifteen-love", () => {
+                act();
+                expect(result).to.equal("fifteen-love");
+            });
+        });
     })
 });

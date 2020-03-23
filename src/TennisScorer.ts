@@ -4,7 +4,8 @@ export class TennisScorer {
             0: "love",
             15: "fifteen"
         };
-        return `${scoreMap[p1Score]}-all`;
+        const p1ScoreText = scoreMap[p1Score];
+        return `${p1ScoreText}-all`;
     }
 
 }

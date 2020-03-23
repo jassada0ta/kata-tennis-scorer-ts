@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "lib": ["es6","DOM"],
+      "target": "es5",
+      "skipLibCheck": true,
+      "module": "commonjs",
+      "sourceMap": true
+    }
+  }

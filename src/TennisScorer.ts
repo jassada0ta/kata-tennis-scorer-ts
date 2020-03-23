@@ -12,7 +12,8 @@ export class TennisScorer {
         const isSameScore = p1Score === p2Score;
         const sameScoreLessThan40Text = `${p1ScoreText}-all`;
         if (isSameScore) {
-            return p1Score === 40 ? "deuce" : sameScoreLessThan40Text;
+            const sameScoreText = p1Score === 40 ? "deuce" : sameScoreLessThan40Text;
+            return sameScoreText;
         }
         return diffScoreText;
     }

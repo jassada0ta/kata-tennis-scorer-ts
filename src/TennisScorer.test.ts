@@ -1,5 +1,5 @@
 import { TennisScorer } from './TennisScorer';
-import{expect} from 'chai';
+import { expect } from 'chai';
 
 describe("TennisScorer", () => {
     let scorer: TennisScorer;
@@ -10,25 +10,36 @@ describe("TennisScorer", () => {
         expect(scorer).to.not.be.undefined;
     });
 
-    describe("callScore",()=>{
-        let result : string;
-        let p1Score : number;
-        let p2Score : number;
+    describe("callScore", () => {
+        let result: string;
+        let p1Score: number;
+        let p2Score: number;
 
-        const act = ()=>{
-            result = scorer.callScore(p1Score,p2Score);
+        const act = () => {
+            result = scorer.callScore(p1Score, p2Score);
         };
 
-        describe("when score is 0-0",()=>{
-            beforeEach(()=>{
-                p1Score=0;
-                p2Score=0;
+        describe("when score is 0-0", () => {
+            beforeEach(() => {
+                p1Score = 0;
+                p2Score = 0;
             });
 
-            it("should return love-all",()=>{
+            it("should return love-all", () => {
                 act();
                 expect(result).to.equal("love-all");
             });
-        })
+        });
+        describe("when score is 15-15", () => {
+            beforeEach(() => {
+                p1Score = 15;
+                p2Score = 15;
+            });
+
+            it("should return fifteen-all", () => {
+                act();
+                expect(result).to.equal("fifteen-all");
+            });
+        });
     })
 });

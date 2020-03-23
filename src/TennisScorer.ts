@@ -2,7 +2,8 @@ export class TennisScorer {
     callScore(p1Score: number, p2Score: number): string {
         const scoreMap: any = {
             0: "love",
-            15: "fifteen"
+            15: "fifteen",
+            30: "thirty"
         };
         const p1ScoreText = scoreMap[p1Score];
         const p2ScoreText = scoreMap[p2Score];

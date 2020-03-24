@@ -1,4 +1,18 @@
 export class TennisScorer {
+
+    callScoreByBalls(p1Balls: number, p2Balls: number) {
+        const ballsToScoreMap: any = {
+            0: 0,
+            1: 15,
+            2: 30,
+            3: 40,
+            4: 41
+        };
+        return this.callScore(
+            ballsToScoreMap[p1Balls], 
+            ballsToScoreMap[p2Balls]);
+    }
+
     callScore(p1Score: number, p2Score: number): string {
         const scoreMap: any = {
             0: "love",

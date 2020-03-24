@@ -29,4 +29,30 @@ describe("TennisScorer", () => {
             });
         });
     });
+
+    describe("callScoreByBalls",()=>{
+        const tests: any[] = [
+            [0, 0, "love-all"],
+            [1, 1, "fifteen-all"],
+            [1, 0, "fifteen-love"],
+            [2, 0, "thirty-love"],
+            [3, 0, "forty-love"],
+            [3, 3, "deuce"],
+            [4, 3, "advantage player1"],
+            [3, 4, "advantage player2"]
+        ];
+
+        tests.forEach(t => {
+            const p1Balls = t[0];
+            const p2Balls = t[1];
+            const expectedResult = t[2];
+            describe(`when balls numbers are ${p1Balls}-${p2Balls}`, () => {
+                it(`should return ${expectedResult}`, () => {
+                    const scorer = new TennisScorer();
+                    const result = scorer.callScoreByBalls(p1Balls, p2Balls);
+                    expect(result).to.equal(expectedResult);
+                });
+            });
+        });
+    });
 });
